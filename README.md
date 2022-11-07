@@ -1,2 +1,2 @@
 # 99-bottles
-Practise OOD using TDD
+To practise TDD using the green bar patterns.
