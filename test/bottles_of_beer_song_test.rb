@@ -2,7 +2,10 @@ require 'minitest/autorun'
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number)
-    if number == 98
+    if number == 2
+      "2 bottles of beer on the wall, 2 bottles of beer.\n" +
+        "Take one down and pass it around, 1 bottle of beer on the wall.\n"
+    elsif number == 98
       "98 bottles of beer on the wall, 98 bottles of beer.\n" +
         "Take one down and pass it around, 97 bottles of beer on the wall.\n"
     else
@@ -28,7 +31,6 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def test_verse_98
-    skip('Test list')
     expected_verse =
       "2 bottles of beer on the wall, 2 bottles of beer.\n" +
         "Take one down and pass it around, 1 bottle of beer on the wall.\n"
