@@ -6,11 +6,11 @@ class BottlesOfBeerSongTest < Minitest::Test
       "2 bottles of beer on the wall, 2 bottles of beer.\n" +
         "Take one down and pass it around, 1 bottle of beer on the wall.\n"
     elsif number == 98
-      "98 bottles of beer on the wall, 98 bottles of beer.\n" +
-        "Take one down and pass it around, 97 bottles of beer on the wall.\n"
+      "#{98} bottles of beer on the wall, #{98} bottles of beer.\n" +
+        "Take one down and pass it around, #{98 - 1} bottles of beer on the wall.\n"
     else
-      "99 bottles of beer on the wall, 99 bottles of beer.\n" +
-        "Take one down and pass it around, 98 bottles of beer on the wall.\n"
+      "#{99} bottles of beer on the wall, #{99} bottles of beer.\n" +
+        "Take one down and pass it around, #{99 - 1} bottles of beer on the wall.\n"
     end
   end
 
