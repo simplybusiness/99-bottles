@@ -16,8 +16,11 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def action(number = :fixme)
-    return 'Take it down and pass it around' if number == 1
-    'Take one down and pass it around'
+    if number == 1
+      'Take it down and pass it around'
+    else
+      'Take one down and pass it around'
+    end
   end
 
   def bottle_amount(number)
