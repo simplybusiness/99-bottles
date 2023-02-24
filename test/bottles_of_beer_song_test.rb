@@ -7,12 +7,17 @@ class BottlesOfBeerSongTest < Minitest::Test
       "No more bottles of beer on the wall, no more bottles of beer.\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     when 1
-      "1 bottle of beer on the wall, 1 bottle of beer.\n" +
-        "Take it down and pass it around, no more bottles of beer on the wall.\n"
+      "#{number} #{bottle_amount(number)} of beer on the wall, #{number} #{bottle_amount(number)} of beer.\n" +
+        "#{action(number)}, no more bottles of beer on the wall.\n"
     else
       "#{number} #{bottle_amount(number)} of beer on the wall, #{number} #{bottle_amount(number)} of beer.\n" +
-        "Take one down and pass it around, #{number - 1} #{bottle_amount(number - 1)} of beer on the wall.\n"
+        "#{action(number)}, #{number - 1} #{bottle_amount(number - 1)} of beer on the wall.\n"
     end
+  end
+
+  def action(number = :fixme)
+    return 'Take it down and pass it around' if number == 1
+    'Take one down and pass it around'
   end
 
   def bottle_amount(number)
