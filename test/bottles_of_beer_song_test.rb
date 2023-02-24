@@ -24,7 +24,11 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def bottle_amount(number)
-    number == 1 ? 'bottle' : 'bottles'
+    if number == 1
+      'bottle'
+    else
+      'bottles'
+    end
   end
 
   def test_verse_1
