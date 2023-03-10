@@ -4,10 +4,10 @@ class BottlesOfBeerSongTest < Minitest::Test
   def verse(number)
     case number
     when 0
-      "No more bottles of beer on the wall, no more bottles of beer.\n" +
+      "#{bottle_message(number).capitalize} of beer on the wall, #{bottle_message(number)} of beer.\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     else
-      "#{bottle_message(number)} of beer on the wall, #{bottle_message(number)} of beer.\n" +
+      "#{bottle_message(number).capitalize} of beer on the wall, #{bottle_message(number)} of beer.\n" +
         "Take #{take_pronoun(number)} down and pass it around, #{bottle_message(number - 1)} of beer on the wall.\n"
     end
   end
