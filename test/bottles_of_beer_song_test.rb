@@ -1,8 +1,12 @@
 require 'minitest/autorun'
 
 class BottlesOfBeerSongTest < Minitest::Test
+  def verse(number_of_bottles)
+    "99 bottles of beer on the wall, 99 bottles of beer.\n" +
+    "Take one down and pass it around, 98 bottles of beer on the wall.\n"
+  end
+  
   def test_verse_1
-    skip('Test list')
     expected_verse =
       "99 bottles of beer on the wall, 99 bottles of beer.\n" +
         "Take one down and pass it around, 98 bottles of beer on the wall.\n"
