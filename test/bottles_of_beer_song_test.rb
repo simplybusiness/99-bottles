@@ -5,19 +5,21 @@ class BottlesOfBeerSongTest < Minitest::Test
     case number
     when 0
       "#{bottle_message(number).capitalize} of beer on the wall, #{bottle_message(number)} of beer.\n" +
-        "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+        "#{take_message(number)}, 99 bottles of beer on the wall.\n"
     else
       "#{bottle_message(number).capitalize} of beer on the wall, #{bottle_message(number)} of beer.\n" +
-        "Take #{take_pronoun(number)} down and pass it around, #{bottle_message(number - 1)} of beer on the wall.\n"
+        "#{take_message(number)}, #{bottle_message(number - 1)} of beer on the wall.\n"
     end
   end
 
-  def take_pronoun(bottle_count)
+  def take_message(bottle_count)
     case bottle_count
+    when 0
+      "Go to the store and buy some more"
     when 1
-      "it"
+      "Take it down and pass it around"
     else
-      "one"
+      "Take one down and pass it around"
     end
   end
 
