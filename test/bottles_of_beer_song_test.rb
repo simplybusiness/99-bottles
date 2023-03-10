@@ -7,11 +7,11 @@ class BottlesOfBeerSongTest < Minitest::Test
       "No more bottles of beer on the wall, no more bottles of beer.\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     when 1
-      "#{pluralize_bottle(number)} of beer on the wall, #{pluralize_bottle(number)} of beer.\n" +
-        "Take #{take_pronoun(number)} down and pass it around, #{pluralize_bottle(number - 1)} of beer on the wall.\n"
+      "#{bottle_message(number)} of beer on the wall, #{bottle_message(number)} of beer.\n" +
+        "Take #{take_pronoun(number)} down and pass it around, #{bottle_message(number - 1)} of beer on the wall.\n"
     else
-      "#{pluralize_bottle(number)} of beer on the wall, #{pluralize_bottle(number)} of beer.\n" +
-        "Take #{take_pronoun(number)} down and pass it around, #{pluralize_bottle(number - 1)} of beer on the wall.\n"
+      "#{bottle_message(number)} of beer on the wall, #{bottle_message(number)} of beer.\n" +
+        "Take #{take_pronoun(number)} down and pass it around, #{bottle_message(number - 1)} of beer on the wall.\n"
     end
   end
 
@@ -24,7 +24,7 @@ class BottlesOfBeerSongTest < Minitest::Test
     end
   end
 
-  def pluralize_bottle(bottle_count)
+  def bottle_message(bottle_count)
     # bottle_count > 1 ? "#{bottle_count} bottles" : "#{bottle_count} bottle"
     case bottle_count
     when 0
