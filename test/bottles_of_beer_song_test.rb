@@ -6,11 +6,7 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def first_verse(number_of_bottles)
-    if number_of_bottles == 0
-      "No more bottles of beer on the wall, no more bottles of beer.\n"
-    else
-      "#{number_of_bottles} #{bottle_or_bottles(number_of_bottles)} of beer on the wall, #{number_of_bottles} #{bottle_or_bottles(number_of_bottles)} of beer.\n"
-    end
+    "#{quantity(number_of_bottles)} #{bottle_or_bottles(number_of_bottles)} of beer on the wall, #{quantity(number_of_bottles).downcase} #{bottle_or_bottles(number_of_bottles)} of beer.\n"
   end
 
   def second_verse(number_of_bottles)
@@ -25,10 +21,18 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def bottle_or_bottles(number_of_bottles)
-    if number_of_bottles > 1
-      "bottles"
-    elsif number_of_bottles == 1
+    if number_of_bottles == 1
       "bottle"
+    else
+      "bottles"
+    end
+  end
+
+  def quantity(number_of_bottles)
+    if number_of_bottles == 0
+      "No more"
+    else
+      number_of_bottles.to_s
     end
   end
 
