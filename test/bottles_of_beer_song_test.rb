@@ -8,10 +8,19 @@ class BottlesOfBeerSongTest < Minitest::Test
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     when 1
       "#{pluralize_bottle(number)} of beer on the wall, #{pluralize_bottle(number)} of beer.\n" +
-        "Take it down and pass it around, #{pluralize_bottle(number - 1)} of beer on the wall.\n"
+        "Take #{take_pronoun(number)} down and pass it around, #{pluralize_bottle(number - 1)} of beer on the wall.\n"
     else
       "#{pluralize_bottle(number)} of beer on the wall, #{pluralize_bottle(number)} of beer.\n" +
-        "Take one down and pass it around, #{pluralize_bottle(number - 1)} of beer on the wall.\n"
+        "Take #{take_pronoun(number)} down and pass it around, #{pluralize_bottle(number - 1)} of beer on the wall.\n"
+    end
+  end
+
+  def take_pronoun(bottle_count)
+    case bottle_count
+    when 1
+      "it"
+    else
+      "one"
     end
   end
 
