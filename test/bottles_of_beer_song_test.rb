@@ -22,7 +22,6 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def bottle_message(bottle_count)
-    # bottle_count > 1 ? "#{bottle_count} bottles" : "#{bottle_count} bottle"
     case bottle_count
     when 0
       "no more bottles"
