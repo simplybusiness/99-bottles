@@ -6,11 +6,18 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def first_verse(number_of_bottles)
-    "#{number_of_bottles} #{bottle_or_bottles(number_of_bottles)} of beer on the wall, #{number_of_bottles} #{bottle_or_bottles(number_of_bottles)} of beer.\n"
+    if number_of_bottles == 0
+      "No more bottles of beer on the wall, no more bottles of beer.\n"
+    else
+      "#{number_of_bottles} #{bottle_or_bottles(number_of_bottles)} of beer on the wall, #{number_of_bottles} #{bottle_or_bottles(number_of_bottles)} of beer.\n"
+    end
   end
 
   def second_verse(number_of_bottles)
-    if number_of_bottles == 1
+    case number_of_bottles
+    when 0
+      "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+    when 1
       "Take it down and pass it around, no more bottles of beer on the wall.\n"
     else
       "Take one down and pass it around, #{number_of_bottles - 1} #{bottle_or_bottles(number_of_bottles -1)} of beer on the wall.\n"
@@ -58,7 +65,6 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def test_last_verse
-    skip('Test list')
     expected_verse =
       "No more bottles of beer on the wall, no more bottles of beer.\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
