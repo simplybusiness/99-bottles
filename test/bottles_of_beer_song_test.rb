@@ -6,20 +6,24 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def first_verse(number_of_bottles)
-    "#{n_bottles_of_beer(number_of_bottles)} on the wall, #{quantity(number_of_bottles).downcase} #{bottle_or_bottles(number_of_bottles)} of beer.\n"
+    "#{n_bottles_of_beer_on_the_wall(number_of_bottles)}, #{n_bottles_of_beer(number_of_bottles).downcase}.\n"
   end
 
   def second_verse(number_of_bottles)
     case number_of_bottles
     when 0
-      "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+      "Go to the store and buy some more, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1)}.\n"
     else
-      "Take #{it_or_one(number_of_bottles)} down and pass it around, #{quantity(number_of_bottles -1).downcase} #{bottle_or_bottles(number_of_bottles -1)} of beer on the wall.\n"
+      "Take #{it_or_one(number_of_bottles)} down and pass it around, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1).downcase}.\n"
     end
   end
 
   def n_bottles_of_beer(number_of_bottles)
     "#{quantity(number_of_bottles)} #{bottle_or_bottles(number_of_bottles)} of beer"
+  end
+
+  def n_bottles_of_beer_on_the_wall(number_of_bottles)
+    "#{n_bottles_of_beer(number_of_bottles)} on the wall"
   end
 
   def it_or_one(number_of_bottles)
@@ -42,7 +46,7 @@ class BottlesOfBeerSongTest < Minitest::Test
     if number_of_bottles == 0
       "No more"
     else
-      number_of_bottles.to_s
+      number_of_bottles.modulo(100).to_s
     end
   end
 
