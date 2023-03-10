@@ -7,16 +7,16 @@ class BottlesOfBeerSongTest < Minitest::Test
       "No more bottles of beer on the wall, no more bottles of beer.\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     when 1
-      "#{number} #{pluralize_bottle(number)} of beer on the wall, #{number} #{pluralize_bottle(number)} of beer.\n" +
+      "#{pluralize_bottle(number)} of beer on the wall, #{pluralize_bottle(number)} of beer.\n" +
         "Take it down and pass it around, no more bottles of beer on the wall.\n"
     else
-      "#{number} #{pluralize_bottle(number)} of beer on the wall, #{number} #{pluralize_bottle(number)} of beer.\n" +
-        "Take one down and pass it around, #{number - 1} #{pluralize_bottle(number - 1)} of beer on the wall.\n"
+      "#{pluralize_bottle(number)} of beer on the wall, #{pluralize_bottle(number)} of beer.\n" +
+        "Take one down and pass it around, #{pluralize_bottle(number - 1)} of beer on the wall.\n"
     end
   end
 
   def pluralize_bottle(bottle_count)
-    bottle_count > 1 ? "bottles" : "bottle"
+    bottle_count > 1 ? "#{bottle_count} bottles" : "#{bottle_count} bottle"
   end
 
   def test_verse_1
