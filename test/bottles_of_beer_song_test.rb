@@ -11,11 +11,15 @@ class BottlesOfBeerSongTest < Minitest::Test
         "Take it down and pass it around, no more bottles of beer on the wall.\n"
     when 2
       "#{number} bottles of beer on the wall, #{number} bottles of beer.\n" +
-        "Take one down and pass it around, #{number - 1} bottle of beer on the wall.\n"
+        "Take one down and pass it around, #{number - 1} #{pluralize_bottle(number - 1)} of beer on the wall.\n"
     else
       "#{number} bottles of beer on the wall, #{number} bottles of beer.\n" +
-        "Take one down and pass it around, #{number - 1} bottles of beer on the wall.\n"
+        "Take one down and pass it around, #{number - 1} #{pluralize_bottle(number - 1)} of beer on the wall.\n"
     end
+  end
+
+  def pluralize_bottle(bottle_count)
+    bottle_count > 1 ? "bottles" : "bottle"
   end
 
   def test_verse_1
