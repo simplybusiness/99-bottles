@@ -6,7 +6,7 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def first_verse(number_of_bottles)
-    "#{quantity(number_of_bottles)} #{bottle_or_bottles(number_of_bottles)} of beer on the wall, #{quantity(number_of_bottles).downcase} #{bottle_or_bottles(number_of_bottles)} of beer.\n"
+    "#{n_bottles_of_beer(number_of_bottles)} on the wall, #{quantity(number_of_bottles).downcase} #{bottle_or_bottles(number_of_bottles)} of beer.\n"
   end
 
   def second_verse(number_of_bottles)
@@ -16,6 +16,10 @@ class BottlesOfBeerSongTest < Minitest::Test
     else
       "Take #{it_or_one(number_of_bottles)} down and pass it around, #{quantity(number_of_bottles -1).downcase} #{bottle_or_bottles(number_of_bottles -1)} of beer on the wall.\n"
     end
+  end
+
+  def n_bottles_of_beer(number_of_bottles)
+    "#{quantity(number_of_bottles)} #{bottle_or_bottles(number_of_bottles)} of beer"
   end
 
   def it_or_one(number_of_bottles)
