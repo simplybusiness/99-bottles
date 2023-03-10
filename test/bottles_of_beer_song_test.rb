@@ -13,10 +13,16 @@ class BottlesOfBeerSongTest < Minitest::Test
     case number_of_bottles
     when 0
       "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
-    when 1
-      "Take it down and pass it around, #{quantity(number_of_bottles -1).downcase} #{bottle_or_bottles(number_of_bottles -1)} of beer on the wall.\n"
     else
-      "Take one down and pass it around, #{quantity(number_of_bottles -1).downcase} #{bottle_or_bottles(number_of_bottles -1)} of beer on the wall.\n"
+      "Take #{it_or_one(number_of_bottles)} down and pass it around, #{quantity(number_of_bottles -1).downcase} #{bottle_or_bottles(number_of_bottles -1)} of beer on the wall.\n"
+    end
+  end
+
+  def it_or_one(number_of_bottles)
+    if number_of_bottles == 1
+      "it"
+    else
+      "one"
     end
   end
 
