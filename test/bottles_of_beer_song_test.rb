@@ -10,12 +10,7 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def second_verse(number_of_bottles)
-    case number_of_bottles
-    when 0
-      "Go to the store and buy some more, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1)}.\n"
-    else
-      "Take #{it_or_one(number_of_bottles)} down and pass it around, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1).downcase}.\n"
-    end
+    "#{take_one_down_and_pass_it_around(number_of_bottles)}, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1).downcase}.\n"
   end
 
   def n_bottles_of_beer(number_of_bottles)
@@ -24,6 +19,15 @@ class BottlesOfBeerSongTest < Minitest::Test
 
   def n_bottles_of_beer_on_the_wall(number_of_bottles)
     "#{n_bottles_of_beer(number_of_bottles)} on the wall"
+  end
+
+  def take_one_down_and_pass_it_around(number_of_bottles)
+    case number_of_bottles
+    when 0
+      "Go to the store and buy some more"
+    else
+      "Take #{it_or_one(number_of_bottles)} down and pass it around"
+    end
   end
 
   def it_or_one(number_of_bottles)
