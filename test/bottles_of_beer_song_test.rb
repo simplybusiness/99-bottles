@@ -2,14 +2,7 @@ require 'minitest/autorun'
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number_of_bottles)
-    first_verse(number_of_bottles) + second_verse(number_of_bottles)
-  end
-
-  def first_verse(number_of_bottles)
-    "#{n_bottles_of_beer_on_the_wall(number_of_bottles)}, #{n_bottles_of_beer(number_of_bottles).downcase}.\n"
-  end
-
-  def second_verse(number_of_bottles)
+    "#{n_bottles_of_beer_on_the_wall(number_of_bottles)}, #{n_bottles_of_beer(number_of_bottles).downcase}.\n" +
     "#{take_one_down_and_pass_it_around(number_of_bottles)}, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1).downcase}.\n"
   end
 
