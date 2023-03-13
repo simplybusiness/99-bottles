@@ -2,8 +2,8 @@ require 'minitest/autorun'
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number_of_bottles)
-    "#{n_bottles_of_beer_on_the_wall(number_of_bottles)}, #{n_bottles_of_beer(number_of_bottles).downcase}.\n" +
-    "#{take_one_down_and_pass_it_around(number_of_bottles)}, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1).downcase}.\n"
+    "#{n_bottles_of_beer_on_the_wall(number_of_bottles).capitalize}, #{n_bottles_of_beer(number_of_bottles)}.\n" +
+    "#{take_one_down_and_pass_it_around(number_of_bottles)}, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1)}.\n"
   end
 
   def n_bottles_of_beer(number_of_bottles)
@@ -41,7 +41,7 @@ class BottlesOfBeerSongTest < Minitest::Test
 
   def quantity(number_of_bottles)
     if number_of_bottles == 0
-      "No more"
+      "no more"
     else
       number_of_bottles.modulo(100).to_s
     end
