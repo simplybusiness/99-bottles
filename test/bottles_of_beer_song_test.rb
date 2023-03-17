@@ -37,7 +37,7 @@ class Bottles
     if @number_of_bottles == 0
       NoBottles.new(@number_of_bottles).to_s
     else
-      @number_of_bottles.modulo(100).to_s
+      @number_of_bottles.to_s
     end
   end
 
