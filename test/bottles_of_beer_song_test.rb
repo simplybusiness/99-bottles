@@ -2,6 +2,8 @@ require 'minitest/autorun'
 
 class Bottles
   # number_of_bottle: [("no more", "go to store", "bottles"), (1, "it", "bottle"), (n, "one", "bottles")]
+  attr_reader :bottle_or_bottles, :number_of_bottles
+  
   def initialize(number)
     @number_of_bottles = quantity(number)
   end
@@ -9,7 +11,15 @@ class Bottles
   def to_s
     @number_of_bottles
   end
-  
+
+  def bottle_or_bottles(number)
+    if number == 1
+      "bottle"
+    else
+      "bottles"
+    end
+  end
+
   private
   def quantity(number)
     if number == 0
