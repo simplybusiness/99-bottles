@@ -63,10 +63,6 @@ class BottlesOfBeerSongTest < Minitest::Test
     end
   end
 
-  def bottle_or_bottles(number_of_bottles)
-    Bottles.new(number_of_bottles).bottle_or_bottles
-  end
-
   def test_verse_1
     expected_verse =
       "99 bottles of beer on the wall, 99 bottles of beer.\n" +
