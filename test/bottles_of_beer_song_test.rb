@@ -20,6 +20,14 @@ class Bottles
     end
   end
 
+  def it_or_one
+    if @number_of_bottles == 1
+      "it"
+    else
+      "one"
+    end
+  end
+
   private
   def quantity(number)
     if number == 0
@@ -56,11 +64,7 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def it_or_one(number_of_bottles)
-    if number_of_bottles == 1
-      "it"
-    else
-      "one"
-    end
+    Bottles.new(number_of_bottles).it_or_one
   end
 
   def test_verse_1
