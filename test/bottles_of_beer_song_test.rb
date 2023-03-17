@@ -12,8 +12,8 @@ class Bottles
     quantity(@number_of_bottles)
   end
 
-  def bottle_or_bottles(number)
-    if number == 1
+  def bottle_or_bottles
+    if @number_of_bottles == 1
       "bottle"
     else
       "bottles"
@@ -62,7 +62,7 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def bottle_or_bottles(number_of_bottles)
-    Bottles.new(number_of_bottles).bottle_or_bottles(number_of_bottles)
+    Bottles.new(number_of_bottles).bottle_or_bottles
   end
 
   def test_verse_1
