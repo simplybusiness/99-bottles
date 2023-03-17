@@ -48,8 +48,9 @@ end
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number_of_bottles)
-    "#{n_bottles_of_beer_on_the_wall(Bottles.new(number_of_bottles)).capitalize}, #{n_bottles_of_beer(Bottles.new(number_of_bottles))}.\n" +
-    "#{take_one_down_or_go_to_the_store(Bottles.new(number_of_bottles))}, #{n_bottles_of_beer_on_the_wall(Bottles.new(number_of_bottles).bottles_left)}.\n"
+    bottles = Bottles.new(number_of_bottles)
+    "#{n_bottles_of_beer_on_the_wall(bottles).capitalize}, #{n_bottles_of_beer(bottles)}.\n" +
+    "#{take_one_down_or_go_to_the_store(bottles)}, #{n_bottles_of_beer_on_the_wall(bottles.bottles_left)}.\n"
   end
 
   def n_bottles_of_beer(number_of_bottles)
