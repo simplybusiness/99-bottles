@@ -52,9 +52,8 @@ class BottlesOfBeerSongTest < Minitest::Test
       article = 'one'
     end
 
-    bottle_line = "Take #{article} down and pass it around, #{quantity(number_of_bottles_remaining)} #{pluralise_bottle(number_of_bottles_remaining)} of beer on the wall.\n"
     "#{quantity(number_of_bottles)} #{pluralise_bottle(number_of_bottles)} of beer on the wall, #{quantity(number_of_bottles)} #{pluralise_bottle(number_of_bottles)} of beer.\n" +
-      bottle_line
+      "Take #{article} down and pass it around, #{quantity(number_of_bottles_remaining)} #{pluralise_bottle(number_of_bottles_remaining)} of beer on the wall.\n"
   end
 
   def pluralise_bottle(number_of_bottles)
