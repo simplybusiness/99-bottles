@@ -62,11 +62,7 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def bottle_or_bottles(number_of_bottles)
-    if number_of_bottles == 1
-      "bottle"
-    else
-      "bottles"
-    end
+    Bottles.new(number_of_bottles).bottle_or_bottles(number_of_bottles)
   end
 
   def test_verse_1
