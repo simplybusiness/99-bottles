@@ -47,7 +47,7 @@ class BottlesOfBeerSongTest < Minitest::Test
 
     case number_of_bottles_remaining
     when 0
-      bottle_line = "Take it down and pass it around, #{quantity(number_of_bottles_remaining)} bottles of beer on the wall.\n"
+      bottle_line = "Take it down and pass it around, #{quantity(number_of_bottles_remaining)} #{pluralise_bottle(number_of_bottles_remaining)} of beer on the wall.\n"
     else
       bottle_line = "Take one down and pass it around, #{quantity(number_of_bottles_remaining)} #{pluralise_bottle(number_of_bottles_remaining)} of beer on the wall.\n"
     end
