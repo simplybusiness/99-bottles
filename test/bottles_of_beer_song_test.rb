@@ -5,11 +5,11 @@ class Bottles
   attr_reader :bottle_or_bottles, :number_of_bottles
   
   def initialize(number)
-    @number_of_bottles = quantity(number)
+    @number_of_bottles = number
   end
 
   def to_s
-    @number_of_bottles
+    quantity(@number_of_bottles)
   end
 
   def bottle_or_bottles(number)
