@@ -1,20 +1,39 @@
 require 'minitest/autorun'
 
+class Bottles
+  # number_of_bottle: [("no more", "go to store", "bottles"), (1, "it", "bottle"), (n, "one", "bottles")]
+  def initialize(number_of_bottles)
+    @number_of_bottles = quantity(number_of_bottles)
+  end
+
+  def to_s
+    @number_of_bottles
+  end
+
+  def quantity(number_of_bottles)
+    if number_of_bottles == 0
+      "no more"
+    else
+      number_of_bottles.modulo(100).to_s
+    end
+  end
+end
+
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number_of_bottles)
     "#{n_bottles_of_beer_on_the_wall(number_of_bottles).capitalize}, #{n_bottles_of_beer(number_of_bottles)}.\n" +
-    "#{take_one_down_and_pass_it_around(number_of_bottles)}, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1)}.\n"
+    "#{take_one_down_or_go_to_the_store(number_of_bottles)}, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1)}.\n"
   end
 
   def n_bottles_of_beer(number_of_bottles)
-    "#{quantity(number_of_bottles)} #{bottle_or_bottles(number_of_bottles)} of beer"
+    "#{Bottles.new(number_of_bottles)} #{bottle_or_bottles(number_of_bottles)} of beer"
   end
 
   def n_bottles_of_beer_on_the_wall(number_of_bottles)
-    "#{n_bottles_of_beer(number_of_bottles)} on the wall"
+    "#{quantity(number_of_bottles)} #{bottle_or_bottles(number_of_bottles)} of beer on the wall"
   end
 
-  def take_one_down_and_pass_it_around(number_of_bottles)
+  def take_one_down_or_go_to_the_store(number_of_bottles)
     case number_of_bottles
     when 0
       "Go to the store and buy some more"
