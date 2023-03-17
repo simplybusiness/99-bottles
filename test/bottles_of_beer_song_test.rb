@@ -10,7 +10,6 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def test_verse_2
-    skip('Test list')
     expected_verse =
       "98 bottles of beer on the wall, 98 bottles of beer.\n" +
         "Take one down and pass it around, 97 bottles of beer on the wall.\n"
@@ -46,7 +45,7 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def verse(number_of_bottles)
-    "99 bottles of beer on the wall, 99 bottles of beer.\n" +
-    "Take one down and pass it around, 98 bottles of beer on the wall.\n"
+    "#{number_of_bottles} bottles of beer on the wall, #{number_of_bottles} bottles of beer.\n" +
+    "Take one down and pass it around, #{number_of_bottles-1} bottles of beer on the wall.\n"
   end
 end
