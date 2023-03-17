@@ -44,13 +44,7 @@ class BottlesOfBeerSongTest < Minitest::Test
 
   def verse(number_of_bottles)
     number_of_bottles_remaining = number_of_bottles - 1
-
-    case number_of_bottles_remaining
-    when 0
-      article = 'it'
-    else
-      article = 'one'
-    end
+    article = number_of_bottles_remaining == 0 ? 'it' : 'one'
 
     "#{quantity(number_of_bottles)} #{pluralise_bottle(number_of_bottles)} of beer on the wall, #{quantity(number_of_bottles)} #{pluralise_bottle(number_of_bottles)} of beer.\n" +
       "Take #{article} down and pass it around, #{quantity(number_of_bottles_remaining)} #{pluralise_bottle(number_of_bottles_remaining)} of beer on the wall.\n"
