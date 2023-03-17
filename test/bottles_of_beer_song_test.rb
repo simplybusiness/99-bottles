@@ -44,27 +44,24 @@ end
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number_of_bottles)
-    "#{n_bottles_of_beer_on_the_wall(number_of_bottles).capitalize}, #{n_bottles_of_beer(number_of_bottles)}.\n" +
-    "#{take_one_down_or_go_to_the_store(number_of_bottles)}, #{n_bottles_of_beer_on_the_wall(number_of_bottles - 1)}.\n"
+    "#{n_bottles_of_beer_on_the_wall(Bottles.new(number_of_bottles)).capitalize}, #{n_bottles_of_beer(Bottles.new(number_of_bottles))}.\n" +
+    "#{take_one_down_or_go_to_the_store(Bottles.new(number_of_bottles))}, #{n_bottles_of_beer_on_the_wall(Bottles.new(number_of_bottles - 1))}.\n"
   end
 
   def n_bottles_of_beer(number_of_bottles)
-    bottle = Bottles.new(number_of_bottles)
-    "#{bottle} #{bottle.bottle_or_bottles} of beer"
+    "#{number_of_bottles} #{number_of_bottles.bottle_or_bottles} of beer"
   end
 
   def n_bottles_of_beer_on_the_wall(number_of_bottles)
-    bottle = Bottles.new(number_of_bottles)
-    "#{bottle} #{bottle.bottle_or_bottles} of beer on the wall"
+    "#{number_of_bottles} #{number_of_bottles.bottle_or_bottles} of beer on the wall"
   end
 
   def take_one_down_or_go_to_the_store(number_of_bottles)
-    bottle = Bottles.new(number_of_bottles)
-    case bottle.to_i
+    case number_of_bottles.to_i
     when 0
       "Go to the store and buy some more"
     else
-      "Take #{bottle.it_or_one} down and pass it around"
+      "Take #{number_of_bottles.it_or_one} down and pass it around"
     end
   end
 
