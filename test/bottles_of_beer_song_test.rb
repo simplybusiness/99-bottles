@@ -44,12 +44,15 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def verse(number_of_bottles)
+    bottles_song = "#{number_of_bottles} bottles of beer on the wall, #{number_of_bottles} bottles of beer.\n"
+    bottle_name = ""
+
     if number_of_bottles == 2
-      "#{number_of_bottles} bottles of beer on the wall, #{number_of_bottles} bottles of beer.\n" +
-        "Take one down and pass it around, #{number_of_bottles-1} bottle of beer on the wall.\n"
+      bottle_name = 'bottle'
     else
-      "#{number_of_bottles} bottles of beer on the wall, #{number_of_bottles} bottles of beer.\n" +
-      "Take one down and pass it around, #{number_of_bottles-1} bottles of beer on the wall.\n"
+      bottle_name = 'bottles'
     end
+
+    bottles_song + "Take one down and pass it around, #{number_of_bottles-1} #{bottle_name} of beer on the wall.\n"
   end
 end
