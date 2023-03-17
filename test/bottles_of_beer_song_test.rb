@@ -1,5 +1,27 @@
 require 'minitest/autorun'
 
+class NoBottles
+  def initialize(number)
+    @number_of_bottles = number
+  end
+
+  def to_i
+    @number_of_bottles
+  end
+
+  def to_s
+    'no more'
+  end
+
+  def bottles_left
+    Bottles.new(99)
+  end
+
+  def bottle_or_bottles
+    "bottles"
+  end
+end
+
 class Bottles
   # number_of_bottle: [("no more", "go to store", "bottles"), (1, "it", "bottle"), (n, "one", "bottles")]
   
@@ -42,7 +64,7 @@ end
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number_of_bottles)
-    bottles = Bottles.new(number_of_bottles)
+    bottles = number_of_bottles == 0 ? NoBottles.new(number_of_bottles) : Bottles.new(number_of_bottles)
     "#{n_bottles_of_beer_on_the_wall(bottles).capitalize}, #{n_bottles_of_beer(bottles)}.\n" +
     "#{take_one_down_or_go_to_the_store(bottles)}, #{n_bottles_of_beer_on_the_wall(bottles.bottles_left)}.\n"
   end
