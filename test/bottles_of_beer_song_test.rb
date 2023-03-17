@@ -59,7 +59,7 @@ class BottlesOfBeerSongTest < Minitest::Test
     when 0
       "Go to the store and buy some more"
     else
-      "Take #{it_or_one(number_of_bottles)} down and pass it around"
+      "Take #{Bottles.new(number_of_bottles).it_or_one} down and pass it around"
     end
   end
 
