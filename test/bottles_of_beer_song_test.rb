@@ -37,7 +37,8 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def n_bottles_of_beer(number_of_bottles)
-    "#{Bottles.new(number_of_bottles)} #{bottle_or_bottles(number_of_bottles)} of beer"
+    bottle = Bottles.new(number_of_bottles)
+    "#{bottle} #{bottle.bottle_or_bottles} of beer"
   end
 
   def n_bottles_of_beer_on_the_wall(number_of_bottles)
