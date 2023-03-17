@@ -44,10 +44,10 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def verse(number_of_bottles)
-    bottles_song = "#{number_of_bottles} bottles of beer on the wall, #{number_of_bottles} bottles of beer.\n"
     bottle_name = number_of_bottles_remaining(number_of_bottles) == 1 ? 'bottle' : 'bottles'
 
-    bottles_song + "Take one down and pass it around, #{number_of_bottles_remaining(number_of_bottles)} #{bottle_name} of beer on the wall.\n"
+    "#{number_of_bottles} bottles of beer on the wall, #{number_of_bottles} bottles of beer.\n" +
+    "Take one down and pass it around, #{number_of_bottles_remaining(number_of_bottles)} #{bottle_name} of beer on the wall.\n"
   end
 
   def number_of_bottles_remaining(number_of_bottles)
