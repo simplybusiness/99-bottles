@@ -43,20 +43,17 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def verse(number_of_bottles)
-    case number_of_bottles_remaining(number_of_bottles)
+    number_of_bottles_remaining = number_of_bottles - 1
+
+    case number_of_bottles_remaining
     when 0
       bottle_line = "Take it down and pass it around, no more bottles of beer on the wall.\n"
     else
-      bottle_name = pluralise_bottle(number_of_bottles_remaining(number_of_bottles))
-      bottle_line = "Take one down and pass it around, #{number_of_bottles_remaining(number_of_bottles)} #{bottle_name} of beer on the wall.\n"
+      bottle_line = "Take one down and pass it around, #{number_of_bottles_remaining} #{pluralise_bottle(number_of_bottles_remaining)} of beer on the wall.\n"
     end
 
     "#{number_of_bottles} #{pluralise_bottle(number_of_bottles)} of beer on the wall, #{number_of_bottles} #{pluralise_bottle(number_of_bottles)} of beer.\n" +
       bottle_line
-  end
-
-  def number_of_bottles_remaining(number_of_bottles)
-    number_of_bottles - 1
   end
 
   def pluralise_bottle(number_of_bottles)
