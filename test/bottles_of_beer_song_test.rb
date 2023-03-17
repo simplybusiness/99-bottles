@@ -8,6 +8,10 @@ class Bottles
     @number_of_bottles = number
   end
 
+  def to_i
+    @number_of_bottles
+  end
+
   def to_s
     quantity(@number_of_bottles)
   end
@@ -56,7 +60,7 @@ class BottlesOfBeerSongTest < Minitest::Test
 
   def take_one_down_or_go_to_the_store(number_of_bottles)
     bottle = Bottles.new(number_of_bottles)
-    case number_of_bottles
+    case bottle.to_i
     when 0
       "Go to the store and buy some more"
     else
