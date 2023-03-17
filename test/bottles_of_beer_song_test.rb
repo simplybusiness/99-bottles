@@ -13,7 +13,11 @@ class Bottles
   end
 
   def to_s
-    quantity(@number_of_bottles)
+    if @number_of_bottles == 0
+      "no more"
+    else
+      @number_of_bottles.modulo(100).to_s
+    end
   end
 
   def bottles_left
@@ -33,15 +37,6 @@ class Bottles
       "it"
     else
       "one"
-    end
-  end
-
-  private
-  def quantity(number)
-    if number == 0
-      "no more"
-    else
-      number.modulo(100).to_s
     end
   end
 end
