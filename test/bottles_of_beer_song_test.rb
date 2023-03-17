@@ -47,16 +47,20 @@ class BottlesOfBeerSongTest < Minitest::Test
 
     case number_of_bottles_remaining
     when 0
-      bottle_line = "Take it down and pass it around, no more bottles of beer on the wall.\n"
+      bottle_line = "Take it down and pass it around, #{quantity(number_of_bottles_remaining)} bottles of beer on the wall.\n"
     else
-      bottle_line = "Take one down and pass it around, #{number_of_bottles_remaining} #{pluralise_bottle(number_of_bottles_remaining)} of beer on the wall.\n"
+      bottle_line = "Take one down and pass it around, #{quantity(number_of_bottles_remaining)} #{pluralise_bottle(number_of_bottles_remaining)} of beer on the wall.\n"
     end
 
-    "#{number_of_bottles} #{pluralise_bottle(number_of_bottles)} of beer on the wall, #{number_of_bottles} #{pluralise_bottle(number_of_bottles)} of beer.\n" +
+    "#{quantity(number_of_bottles)} #{pluralise_bottle(number_of_bottles)} of beer on the wall, #{quantity(number_of_bottles)} #{pluralise_bottle(number_of_bottles)} of beer.\n" +
       bottle_line
   end
 
   def pluralise_bottle(number_of_bottles)
     number_of_bottles == 1 ? 'bottle' : 'bottles'
+  end
+
+  def quantity(number_of_bottles)
+    number_of_bottles == 0 ? 'no more' : number_of_bottles.to_s
   end
 end
