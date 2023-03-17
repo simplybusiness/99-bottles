@@ -58,14 +58,6 @@ class BottlesOfBeerSongTest < Minitest::Test
     end
   end
 
-  def quantity(number_of_bottles)
-    if number_of_bottles == 0
-      "no more"
-    else
-      number_of_bottles.modulo(100).to_s
-    end
-  end
-
   def test_verse_1
     expected_verse =
       "99 bottles of beer on the wall, 99 bottles of beer.\n" +
