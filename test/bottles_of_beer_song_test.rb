@@ -45,12 +45,17 @@ class BottlesOfBeerSongTest < Minitest::Test
   def verse(number_of_bottles)
     bottle_name = number_of_bottles_remaining(number_of_bottles) == 1 ? 'bottle' : 'bottles'
 
+    case number_of_bottles_remaining(number_of_bottles)
+    when 0
+      bottle_line = "Take it down and pass it around, no more bottles of beer on the wall.\n"
+    end
+
     if(number_of_bottles >= 2)
       "#{number_of_bottles} bottles of beer on the wall, #{number_of_bottles} bottles of beer.\n" +
       "Take one down and pass it around, #{number_of_bottles_remaining(number_of_bottles)} #{bottle_name} of beer on the wall.\n"
     else
       "#{number_of_bottles} bottle of beer on the wall, #{number_of_bottles} bottle of beer.\n" +
-      "Take it down and pass it around, no more bottles of beer on the wall.\n"
+        bottle_line
     end
   end
 
