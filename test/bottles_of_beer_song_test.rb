@@ -16,6 +16,10 @@ class Bottles
     quantity(@number_of_bottles)
   end
 
+  def bottles_left
+    Bottles.new(@number_of_bottles - 1)
+  end
+
   def bottle_or_bottles
     if @number_of_bottles == 1
       "bottle"
@@ -45,7 +49,7 @@ end
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number_of_bottles)
     "#{n_bottles_of_beer_on_the_wall(Bottles.new(number_of_bottles)).capitalize}, #{n_bottles_of_beer(Bottles.new(number_of_bottles))}.\n" +
-    "#{take_one_down_or_go_to_the_store(Bottles.new(number_of_bottles))}, #{n_bottles_of_beer_on_the_wall(Bottles.new(number_of_bottles - 1))}.\n"
+    "#{take_one_down_or_go_to_the_store(Bottles.new(number_of_bottles))}, #{n_bottles_of_beer_on_the_wall(Bottles.new(number_of_bottles).bottles_left)}.\n"
   end
 
   def n_bottles_of_beer(number_of_bottles)
