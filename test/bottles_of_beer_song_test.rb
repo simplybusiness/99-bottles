@@ -2,7 +2,6 @@ require 'minitest/autorun'
 
 class Bottles
   # number_of_bottle: [("no more", "go to store", "bottles"), (1, "it", "bottle"), (n, "one", "bottles")]
-  attr_reader :bottle_or_bottles, :number_of_bottles
   
   def initialize(number)
     @number_of_bottles = number
