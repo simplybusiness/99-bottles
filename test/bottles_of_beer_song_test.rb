@@ -2,19 +2,20 @@ require 'minitest/autorun'
 
 class Bottles
   # number_of_bottle: [("no more", "go to store", "bottles"), (1, "it", "bottle"), (n, "one", "bottles")]
-  def initialize(number_of_bottles)
-    @number_of_bottles = quantity(number_of_bottles)
+  def initialize(number)
+    @number_of_bottles = quantity(number)
   end
 
   def to_s
     @number_of_bottles
   end
-
-  def quantity(number_of_bottles)
-    if number_of_bottles == 0
+  
+  private
+  def quantity(number)
+    if number == 0
       "no more"
     else
-      number_of_bottles.modulo(100).to_s
+      number.modulo(100).to_s
     end
   end
 end
