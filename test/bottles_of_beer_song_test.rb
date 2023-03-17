@@ -55,16 +55,13 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def take_one_down_or_go_to_the_store(number_of_bottles)
+    bottle = Bottles.new(number_of_bottles)
     case number_of_bottles
     when 0
       "Go to the store and buy some more"
     else
-      "Take #{Bottles.new(number_of_bottles).it_or_one} down and pass it around"
+      "Take #{bottle.it_or_one} down and pass it around"
     end
-  end
-
-  def it_or_one(number_of_bottles)
-    Bottles.new(number_of_bottles).it_or_one
   end
 
   def test_verse_1
