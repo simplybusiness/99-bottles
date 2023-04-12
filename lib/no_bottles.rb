@@ -7,6 +7,10 @@ class NoBottles
     'no more'
   end
 
+  def container
+    'bottles'
+  end
+
   def successive
     Bottles.new(99).to_i
   end
