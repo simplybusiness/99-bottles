@@ -11,7 +11,7 @@ class BottlesOfBeerSongTest < Minitest::Test
         "Take it down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
     else
       "#{quantity(number)} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
-        "Take one down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
+        "Take #{pronoun} down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
     end
   end
 
@@ -21,6 +21,10 @@ class BottlesOfBeerSongTest < Minitest::Test
     else
       number.to_s
     end
+  end
+
+  def pronoun
+    'one'
   end
 
   def container(number)
