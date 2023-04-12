@@ -2,14 +2,8 @@ require 'minitest/autorun'
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number)
-    case number
-    when 0
-      "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
+    "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
         "#{action(number)}, #{quantity(successive(number))} #{container(successive(number))} of beer on the wall.\n"
-    else
-      "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
-        "#{action(number)}, #{quantity(successive(number))} #{container(successive(number))} of beer on the wall.\n"
-    end
   end
 
   def quantity(number)
