@@ -11,7 +11,7 @@ class BottlesOfBeerSongTest < Minitest::Test
         "Take it down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
     else
       "#{quantity(number)} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
-        "Take #{pronoun} down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
+        "Take #{pronoun(number)} down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
     end
   end
 
