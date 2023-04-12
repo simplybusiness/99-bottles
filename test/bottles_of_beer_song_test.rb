@@ -5,46 +5,27 @@ class BottlesOfBeerSongTest < Minitest::Test
   def verse(number)
     "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
         "#{action(number)}, #{quantity(successive(number))} #{container(successive(number))} of beer on the wall.\n"
+    BottleVerse.new.verse(number)
   end
 
   def quantity(number)
-    if number == 0
-      'no more'
-    else
-      number.to_s
-    end
+    BottleVerse.new.quantity(number)
   end
 
   def successive(number)
-    if number == 0
-      99
-    else
-      number - 1
-    end
+    BottleVerse.new.successive(number)
   end
 
   def container(number)
-    if number == 1
-      'bottle'
-    else
-      "bottles"
-    end
+    BottleVerse.new.container(number)
   end
 
   def action(number)
-    if number == 0
-      "Go to the store and buy some more"
-    else
-      "Take #{pronoun(number)} down and pass it around"
-    end
+    BottleVerse.new.action(number)
   end
 
   def pronoun(number)
-    if number == 1
-      'it'
-    else
-      'one'
-    end
+    BottleVerse.new.pronoun(number)
   end
 
   def test_verse_1
