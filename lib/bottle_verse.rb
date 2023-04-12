@@ -35,12 +35,4 @@ class BottleVerse
       Bottles.new(number).action
     end
   end
-
-  def pronoun(number)
-    if number == 1
-      'it'
-    else
-      'one'
-    end
-  end
 end

@@ -3,15 +3,15 @@ class NoBottles
     @number = number
   end
 
-  def quantity(number = 0)
+  def quantity
     'no more'
   end
 
-  def successive(number = 0)
+  def successive
     99
   end
 
-  def action(number = 0)
+  def action
     "Go to the store and buy some more"
   end
 end
