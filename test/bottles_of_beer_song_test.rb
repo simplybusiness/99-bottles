@@ -8,7 +8,7 @@ class BottlesOfBeerSongTest < Minitest::Test
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     when 1
       "#{quantity(number)} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
-        "Take it down and pass it around, no more #{container(number - 1)} of beer on the wall.\n"
+        "Take it down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
     else
       "#{quantity(number)} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
         "Take one down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
@@ -16,7 +16,11 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def quantity(number)
-    number.to_s
+    if number == 0
+      'no more'
+    else
+      number.to_s
+    end
   end
 
   def container(number)
