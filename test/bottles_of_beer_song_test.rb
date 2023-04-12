@@ -7,11 +7,11 @@ class BottlesOfBeerSongTest < Minitest::Test
       "No more bottles of beer on the wall, no more bottles of beer.\n" +
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     when 1
-      "#{number} #{container(number)} of beer on the wall, #{number} #{container(number)} of beer.\n" +
+      "#{number.to_s} #{container(number)} of beer on the wall, #{number.to_s} #{container(number)} of beer.\n" +
         "Take it down and pass it around, no more #{container(number - 1)} of beer on the wall.\n"
     else
-      "#{number} #{container(number)} of beer on the wall, #{number} #{container(number)} of beer.\n" +
-        "Take one down and pass it around, #{number - 1} #{container(number - 1)} of beer on the wall.\n"
+      "#{number.to_s} #{container(number)} of beer on the wall, #{number.to_s} #{container(number)} of beer.\n" +
+        "Take one down and pass it around, #{(number - 1).to_s} #{container(number - 1)} of beer on the wall.\n"
     end
   end
 
