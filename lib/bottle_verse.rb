@@ -1,3 +1,4 @@
+require_relative './no_bottles'
 class BottleVerse
   def verse(number)
     "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
@@ -8,7 +9,7 @@ class BottleVerse
 
   def quantity(number)
     if number == 0
-      'no more'
+      NoBottles.new.quantity(number)
     else
       number.to_s
     end
@@ -16,7 +17,7 @@ class BottleVerse
 
   def successive(number)
     if number == 0
-      99
+      NoBottles.new.successive(number)
     else
       number - 1
     end
@@ -32,7 +33,7 @@ class BottleVerse
 
   def action(number)
     if number == 0
-      "Go to the store and buy some more"
+      NoBottles.new.action(number)
     else
       "Take #{pronoun(number)} down and pass it around"
     end
