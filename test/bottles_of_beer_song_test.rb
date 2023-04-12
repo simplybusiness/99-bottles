@@ -8,7 +8,7 @@ class BottlesOfBeerSongTest < Minitest::Test
         "#{action(number)}, 99 bottles of beer on the wall.\n"
     else
       "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
-        "#{action(number)}, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
+        "#{action(number)}, #{quantity(successive(number))} #{container(successive(number))} of beer on the wall.\n"
     end
   end
 
@@ -18,6 +18,10 @@ class BottlesOfBeerSongTest < Minitest::Test
     else
       number.to_s
     end
+  end
+
+  def successive(number)
+    number - 1
   end
 
   def container(number)
