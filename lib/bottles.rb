@@ -18,4 +18,18 @@ class Bottles
       "bottles"
     end
   end
+
+  def action
+    "Take #{pronoun} down and pass it around"
+  end
+
+  private
+
+  def pronoun
+    if @number == 1
+      'it'
+    else
+      'one'
+    end
+  end
 end

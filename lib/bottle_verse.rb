@@ -32,7 +32,7 @@ class BottleVerse
     if number == 0
       NoBottles.new(0).action
     else
-      "Take #{pronoun(number)} down and pass it around"
+      Bottles.new(number).action
     end
   end
 
