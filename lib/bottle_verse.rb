@@ -1,4 +1,5 @@
 require_relative './no_bottles'
+require_relative './bottles'
 class BottleVerse
   def verse(number)
     "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
@@ -11,7 +12,7 @@ class BottleVerse
     if number == 0
       NoBottles.new(0).quantity
     else
-      number.to_s
+      Bottles.new(number).quantity
     end
   end
 
