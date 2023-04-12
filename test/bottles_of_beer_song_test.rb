@@ -23,7 +23,7 @@ class BottlesOfBeerSongTest < Minitest::Test
     end
   end
 
-  def pronoun(number = :default)
+  def pronoun(number)
     if number == 1
       'it'
     else
