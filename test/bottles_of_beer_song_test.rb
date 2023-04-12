@@ -23,7 +23,7 @@ class BottlesOfBeerSongTest < Minitest::Test
     end
   end
 
-  def pronoun
+  def pronoun(number = :default)
     'one'
   end
 
