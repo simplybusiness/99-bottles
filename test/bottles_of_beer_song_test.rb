@@ -8,7 +8,7 @@ class BottlesOfBeerSongTest < Minitest::Test
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     when 1
       "#{quantity(number)} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
-        "Take it down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
+        "Take #{pronoun(number)} down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
     else
       "#{quantity(number)} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
         "Take #{pronoun(number)} down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
@@ -24,7 +24,11 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def pronoun(number = :default)
-    'one'
+    if number == 1
+      'it'
+    else
+      'one'
+    end
   end
 
   def container(number)
