@@ -3,29 +3,7 @@ require_relative '../lib/bottle_verse'
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number)
-    "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
-        "#{action(number)}, #{quantity(successive(number))} #{container(successive(number))} of beer on the wall.\n"
     BottleVerse.new.verse(number)
-  end
-
-  def quantity(number)
-    BottleVerse.new.quantity(number)
-  end
-
-  def successive(number)
-    BottleVerse.new.successive(number)
-  end
-
-  def container(number)
-    BottleVerse.new.container(number)
-  end
-
-  def action(number)
-    BottleVerse.new.action(number)
-  end
-
-  def pronoun(number)
-    BottleVerse.new.pronoun(number)
   end
 
   def test_verse_1
