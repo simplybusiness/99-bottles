@@ -4,6 +4,8 @@ class BottleVerse
       "#{action(number)}, #{quantity(successive(number))} #{container(successive(number))} of beer on the wall.\n"
   end
 
+  private
+
   def quantity(number)
     if number == 0
       'no more'
