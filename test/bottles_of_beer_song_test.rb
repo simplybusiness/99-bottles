@@ -19,7 +19,11 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def container(number)
-    "bottles"
+    if number == 1
+      'bottle'
+    else
+      "bottles"
+    end
   end
 
   def test_verse_1
