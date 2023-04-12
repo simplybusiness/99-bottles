@@ -18,7 +18,7 @@ class BottlesOfBeerSongTest < Minitest::Test
     end
   end
 
-  def container(number = :default)
+  def container(number)
     "bottles"
   end
 
