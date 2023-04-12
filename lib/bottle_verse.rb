@@ -9,7 +9,7 @@ class BottleVerse
 
   def quantity(number)
     if number == 0
-      NoBottles.new.quantity(number)
+      NoBottles.new(0).quantity
     else
       number.to_s
     end
@@ -17,7 +17,7 @@ class BottleVerse
 
   def successive(number)
     if number == 0
-      NoBottles.new.successive(number)
+      NoBottles.new(0).successive
     else
       number - 1
     end
@@ -33,7 +33,7 @@ class BottleVerse
 
   def action(number)
     if number == 0
-      NoBottles.new.action(number)
+      NoBottles.new(0).action
     else
       "Take #{pronoun(number)} down and pass it around"
     end
