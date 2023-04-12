@@ -20,7 +20,7 @@ class BottleVerse
     if number == 0
       NoBottles.new(0).successive
     else
-      number - 1
+      Bottles.new(number).successive
     end
   end
 
