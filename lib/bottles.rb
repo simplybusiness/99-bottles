@@ -8,7 +8,7 @@ class Bottles
   end
 
   def successive
-    @number - 1
+    Bottles.new(@number - 1).to_i
   end
 
   def container
@@ -21,6 +21,10 @@ class Bottles
 
   def action
     "Take #{pronoun} down and pass it around"
+  end
+
+  def to_i
+    @number
   end
 
   private
