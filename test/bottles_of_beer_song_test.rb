@@ -10,12 +10,16 @@ class BottlesOfBeerSongTest < Minitest::Test
       "1 bottle of beer on the wall, 1 bottle of beer.\n" +
         "Take it down and pass it around, no more bottles of beer on the wall.\n"
     when 2
-      "#{number} #{"bottles"} of beer on the wall, #{number} #{"bottles"} of beer.\n" +
+      "#{number} #{container} of beer on the wall, #{number} #{container} of beer.\n" +
         "Take one down and pass it around, #{number - 1} bottle of beer on the wall.\n"
     else
-      "#{number} #{"bottles"} of beer on the wall, #{number} #{"bottles"} of beer.\n" +
-        "Take one down and pass it around, #{number - 1} #{"bottles"} of beer on the wall.\n"
+      "#{number} #{container} of beer on the wall, #{number} #{container} of beer.\n" +
+        "Take one down and pass it around, #{number - 1} #{container} of beer on the wall.\n"
     end
+  end
+
+  def container
+    "bottles"
   end
 
   def test_verse_1
