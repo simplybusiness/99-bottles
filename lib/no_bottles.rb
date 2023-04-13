@@ -1,8 +1,4 @@
 class NoBottles
-  def initialize(number = 0)
-    @number = number
-  end
-
   def quantity
     'no more'
   end
