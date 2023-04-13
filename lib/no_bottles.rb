@@ -11,12 +11,12 @@ class NoBottles
     'bottles'
   end
 
-  def successive
-    Bottles.new(99)
-  end
-
   def action
     "Go to the store and buy some more"
+  end
+
+  def successive
+    Bottles.new(99)
   end
 
   def to_i
