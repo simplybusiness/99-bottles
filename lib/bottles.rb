@@ -16,15 +16,15 @@ class Bottles
     @number.to_s
   end
 
-  def successive
-    Bottles.for_verse(@number - 1)
-  end
-
   def container
     "bottles"
   end
 
   def action
     "Take one down and pass it around"
+  end
+
+  def successive
+    Bottles.for_verse(@number - 1)
   end
 end
