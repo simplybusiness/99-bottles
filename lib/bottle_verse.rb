@@ -3,7 +3,7 @@ require_relative './bottles'
 class BottleVerse
   def verse(number)
     number_of_bottles = bottles(number)
-    next_verse = successive(number)
+    next_verse = number_of_bottles.successive
     "#{quantity(number_of_bottles).capitalize} #{container(number)} of beer on the wall, #{quantity(number_of_bottles)} #{container(number)} of beer.\n" +
       "#{action(number)}, #{quantity(next_verse.to_i)} #{container(next_verse.to_i)} of beer on the wall.\n"
   end
@@ -16,10 +16,6 @@ class BottleVerse
     else
       number.quantity
     end
-  end
-
-  def successive(number)
-    bottles(number).successive
   end
 
   def container(number)
