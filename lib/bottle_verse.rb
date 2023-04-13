@@ -9,39 +9,33 @@ class BottleVerse
   private
 
   def quantity(number)
-    if number == 0
-      NoBottles.new(0).quantity
-    else
-      Bottles.new(number).quantity
-    end
+    bottles = bottles(number)
+
+    bottles.quantity
   end
 
-  def successive(number)
+  def bottles(number)
     bottles = if number == 0
                 NoBottles.new(0)
               else
                 Bottles.new(number)
               end
+  end
+
+  def successive(number)
+    bottles = bottles(number)
 
     bottles.successive
   end
 
   def container(number)
-    bottles = if number == 0
-                NoBottles.new(0)
-              else
-                Bottles.new(number)
-              end
+    bottles = bottles(number)
 
     bottles.container
   end
 
   def action(number)
-    bottles = if number == 0
-                NoBottles.new(0)
-              else
-                Bottles.new(number)
-              end
+    bottles = bottles(number)
 
     bottles.action
   end
