@@ -13,7 +13,7 @@ class BottleVerse
   end
 
   def successive(number)
-    bottles(number).successive
+    bottles(number).successive.to_i
   end
 
   def container(number)

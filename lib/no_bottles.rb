@@ -18,4 +18,8 @@ class NoBottles
   def action
     "Go to the store and buy some more"
   end
+
+  def to_i
+    @number
+  end
 end
