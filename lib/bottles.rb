@@ -25,12 +25,6 @@ class Bottles
   end
 
   def action
-    "Take #{pronoun} down and pass it around"
-  end
-
-  private
-
-  def pronoun
-    'one'
+    "Take one down and pass it around"
   end
 end
