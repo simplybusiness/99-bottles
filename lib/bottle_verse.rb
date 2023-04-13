@@ -9,21 +9,15 @@ class BottleVerse
   private
 
   def quantity(number)
-    bottles = bottles(number)
-
-    bottles.quantity
+    bottles(number).quantity
   end
 
   def successive(number)
-    bottles = bottles(number)
-
-    bottles.successive
+    bottles(number).successive
   end
 
   def container(number)
-    bottles = bottles(number)
-
-    bottles.container
+    bottles(number).container
   end
 
   def action(number)
