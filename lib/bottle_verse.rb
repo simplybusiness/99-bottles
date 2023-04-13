@@ -17,26 +17,32 @@ class BottleVerse
   end
 
   def successive(number)
-    if number == 0
-      NoBottles.new(0).successive
-    else
-      Bottles.new(number).successive
-    end
+    bottles = if number == 0
+                NoBottles.new(0)
+              else
+                Bottles.new(number)
+              end
+
+    bottles.successive
   end
 
   def container(number)
-    if number == 0
-      NoBottles.new(0).container
-    else
-      Bottles.new(number).container
-    end
+    bottles = if number == 0
+                NoBottles.new(0)
+              else
+                Bottles.new(number)
+              end
+
+    bottles.container
   end
 
   def action(number)
-    if number == 0
-      NoBottles.new(0).action
-    else
-      Bottles.new(number).action
-    end
+    bottles = if number == 0
+                NoBottles.new(0)
+              else
+                Bottles.new(number)
+              end
+
+    bottles.action
   end
 end
