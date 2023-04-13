@@ -21,12 +21,4 @@ class BottleVerse
   def action(number)
     number.action
   end
-
-  def bottles(number)
-    if number == 0
-      NoBottles.new(0)
-    else
-      Bottles.new(number)
-    end
-  end
 end
