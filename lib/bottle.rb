@@ -16,6 +16,6 @@ class Bottle
   end
 
   def successive
-    NoBottles.new(0)
+    NoBottles.new
   end
 end

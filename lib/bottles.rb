@@ -3,7 +3,7 @@ require_relative './bottle'
 class Bottles
   def self.for_verse(number)
     {
-      0 => NoBottles.new(0),
+      0 => NoBottles.new,
       1 => Bottle.new(1),
     }.fetch(number, new(number))
   end
