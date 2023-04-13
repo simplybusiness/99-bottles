@@ -21,9 +21,7 @@ class BottleVerse
   end
 
   def action(number)
-    bottles = bottles(number)
-
-    bottles.action
+    bottles(number).action
   end
 
   def bottles(number)
