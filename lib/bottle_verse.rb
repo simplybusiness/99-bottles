@@ -9,7 +9,11 @@ class BottleVerse
   private
 
   def quantity(number)
-    bottles(number).quantity
+    if number.is_a?(Integer)
+      bottles(number).quantity
+    else
+      number.quantity
+    end
   end
 
   def successive(number)
