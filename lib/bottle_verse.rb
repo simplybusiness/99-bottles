@@ -2,7 +2,8 @@ require_relative './no_bottles'
 require_relative './bottles'
 class BottleVerse
   def verse(number)
-    "#{quantity(number).capitalize} #{container(number)} of beer on the wall, #{quantity(number)} #{container(number)} of beer.\n" +
+    number_of_bottles = bottles(number)
+    "#{quantity(number_of_bottles).capitalize} #{container(number)} of beer on the wall, #{quantity(number_of_bottles)} #{container(number)} of beer.\n" +
       "#{action(number)}, #{quantity(successive(number).to_i)} #{container(successive(number).to_i)} of beer on the wall.\n"
   end
 
