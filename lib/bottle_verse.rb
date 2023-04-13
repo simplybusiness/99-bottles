@@ -4,8 +4,8 @@ class BottleVerse
   def verse(number)
     number_of_bottles = bottles(number)
     next_verse = number_of_bottles.successive
-    "#{quantity(number_of_bottles).capitalize} #{container(number)} of beer on the wall, #{quantity(number_of_bottles)} #{container(number)} of beer.\n" +
-      "#{action(number)}, #{quantity(next_verse)} #{container(next_verse.to_i)} of beer on the wall.\n"
+    "#{quantity(number_of_bottles).capitalize} #{container(number_of_bottles)} of beer on the wall, #{quantity(number_of_bottles)} #{container(number_of_bottles)} of beer.\n" +
+      "#{action(number)}, #{quantity(next_verse)} #{container(next_verse)} of beer on the wall.\n"
   end
 
   private
