@@ -8,7 +8,7 @@ class Bottles
   end
 
   def successive
-    Bottles.new(@number - 1).to_i
+    Bottles.new(@number - 1)
   end
 
   def container

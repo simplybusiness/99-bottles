@@ -12,7 +12,7 @@ class NoBottles
   end
 
   def successive
-    Bottles.new(99).to_i
+    Bottles.new(99)
   end
 
   def action
