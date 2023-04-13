@@ -14,14 +14,6 @@ class BottleVerse
     bottles.quantity
   end
 
-  def bottles(number)
-    if number == 0
-      NoBottles.new(0)
-    else
-      Bottles.new(number)
-    end
-  end
-
   def successive(number)
     bottles = bottles(number)
 
@@ -38,5 +30,13 @@ class BottleVerse
     bottles = bottles(number)
 
     bottles.action
+  end
+
+  def bottles(number)
+    if number == 0
+      NoBottles.new(0)
+    else
+      Bottles.new(number)
+    end
   end
 end
