@@ -1,4 +1,3 @@
-require_relative './no_bottles'
 require_relative './bottles'
 class BottleVerse
   def verse(number)
