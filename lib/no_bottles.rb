@@ -18,8 +18,4 @@ class NoBottles
   def successive
     Bottles.new(99)
   end
-
-  def to_i
-    @number
-  end
 end
