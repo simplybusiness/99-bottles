@@ -15,7 +15,11 @@ class BottleVerse
   end
 
   def container(number)
-    bottles(number).container
+    if number.is_a?(Integer)
+      bottles(number).container
+    else
+      number.container
+    end
   end
 
   def action(number)
