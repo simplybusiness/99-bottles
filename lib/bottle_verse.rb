@@ -19,7 +19,11 @@ class BottleVerse
   end
 
   def action(number)
-    bottles(number).action
+    if number.is_a?(Integer)
+      bottles(number).action
+    else
+      number.action
+    end
   end
 
   def bottles(number)
