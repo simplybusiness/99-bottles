@@ -15,11 +15,11 @@ class BottleVerse
   end
 
   def bottles(number)
-    bottles = if number == 0
-                NoBottles.new(0)
-              else
-                Bottles.new(number)
-              end
+    if number == 0
+      NoBottles.new(0)
+    else
+      Bottles.new(number)
+    end
   end
 
   def successive(number)
