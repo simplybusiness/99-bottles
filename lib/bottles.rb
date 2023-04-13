@@ -2,13 +2,10 @@ require_relative './no_bottles'
 require_relative './bottle'
 class Bottles
   def self.for_verse(number)
-    if number == 0
-      NoBottles.new(0)
-    elsif number == 1
-      Bottle.new(1)
-    else
-      new(number)
-    end
+    {
+      0 => NoBottles.new(0),
+      1 => Bottle.new(1),
+    }.fetch(number, new(number))
   end
 
   def initialize(number)
