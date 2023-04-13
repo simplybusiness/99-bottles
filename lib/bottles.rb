@@ -32,10 +32,6 @@ class Bottles
     "Take #{pronoun} down and pass it around"
   end
 
-  def to_i
-    @number
-  end
-
   private
 
   def pronoun
