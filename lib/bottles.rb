@@ -1,4 +1,13 @@
+require_relative './no_bottles'
 class Bottles
+  def self.for_verse(number)
+    if number == 0
+      NoBottles.new(0)
+    else
+      new(number)
+    end
+  end
+
   def initialize(number)
     @number = number
   end
@@ -8,7 +17,7 @@ class Bottles
   end
 
   def successive
-    Bottles.new(@number - 1)
+    Bottles.for_verse(@number - 1)
   end
 
   def container
