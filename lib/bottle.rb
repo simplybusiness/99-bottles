@@ -18,4 +18,8 @@ class Bottle
   def successive
     NoBottles.new
   end
+
+  def inspect
+    @number.to_s
+  end
 end

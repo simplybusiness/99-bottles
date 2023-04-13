@@ -27,4 +27,8 @@ class Bottles
   def successive
     Bottles.for_verse(@number - 1)
   end
+
+  def inspect
+    @number.to_s
+  end
 end

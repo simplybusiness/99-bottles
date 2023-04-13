@@ -14,4 +14,8 @@ class NoBottles
   def successive
     Bottles.new(99)
   end
+
+  def inspect
+    '0'
+  end
 end
