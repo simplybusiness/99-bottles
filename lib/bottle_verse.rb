@@ -5,7 +5,7 @@ class BottleVerse
     number_of_bottles = bottles(number)
     next_verse = number_of_bottles.successive
     "#{quantity(number_of_bottles).capitalize} #{container(number_of_bottles)} of beer on the wall, #{quantity(number_of_bottles)} #{container(number_of_bottles)} of beer.\n" +
-      "#{action(number)}, #{quantity(next_verse)} #{container(next_verse)} of beer on the wall.\n"
+      "#{action(number_of_bottles)}, #{quantity(next_verse)} #{container(next_verse)} of beer on the wall.\n"
   end
 
   private
@@ -19,11 +19,7 @@ class BottleVerse
   end
 
   def action(number)
-    if number.is_a?(Integer)
-      bottles(number).action
-    else
-      number.action
-    end
+    number.action
   end
 
   def bottles(number)
