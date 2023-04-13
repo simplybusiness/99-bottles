@@ -10,10 +10,6 @@ class BottleVerse
 
   private
 
-  def quantity(number)
-    number.quantity
-  end
-
   def container(number)
     number.container
   end
