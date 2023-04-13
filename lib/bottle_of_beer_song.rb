@@ -1,5 +1,5 @@
 require_relative './bottles'
-class BottleVerse
+class BottleOfBeerSong
   def verse(number)
     number_of_bottles = Bottles.for_verse(number)
     next_verse = number_of_bottles.successive

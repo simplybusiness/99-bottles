@@ -1,9 +1,9 @@
 require 'minitest/autorun'
-require_relative '../lib/bottle_verse'
+require_relative '../lib/bottle_of_beer_song'
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number)
-    BottleVerse.new.verse(number)
+    BottleOfBeerSong.new.verse(number)
   end
 
   def test_verse_1
