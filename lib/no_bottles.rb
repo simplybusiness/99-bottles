@@ -18,4 +18,8 @@ class NoBottles
   def inspect
     '0'
   end
+
+  def to_s
+    'no more'
+  end
 end

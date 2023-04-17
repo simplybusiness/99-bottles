@@ -31,4 +31,8 @@ class Bottles
   def inspect
     @number.to_s
   end
+
+  def to_s
+    @number.to_s
+  end
 end
