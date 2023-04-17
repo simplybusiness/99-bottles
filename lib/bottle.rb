@@ -3,10 +3,6 @@ class Bottle
     @number = number
   end
 
-  def quantity
-    @number.to_s
-  end
-
   def container
     'bottle'
   end

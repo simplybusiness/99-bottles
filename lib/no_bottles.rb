@@ -1,8 +1,4 @@
 class NoBottles
-  def quantity
-    'no more'
-  end
-
   def container
     'bottles'
   end
