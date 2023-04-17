@@ -8,7 +8,7 @@ class NoBottles
   end
 
   def successive
-    Bottles.new(99)
+    BottleNumber.new(99)
   end
 
   def inspect

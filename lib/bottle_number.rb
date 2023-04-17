@@ -1,6 +1,6 @@
 require_relative './no_bottles'
 require_relative './bottle'
-class Bottles
+class BottleNumber
   def self.for_verse(number)
     {
       0 => NoBottles.new,
@@ -21,7 +21,7 @@ class Bottles
   end
 
   def successive
-    Bottles.for_verse(@number - 1)
+    BottleNumber.for_verse(@number - 1)
   end
 
   def inspect
