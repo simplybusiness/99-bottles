@@ -1,8 +1,4 @@
 class Bottle
-  def initialize(number)
-    @number = number
-  end
-
   def container
     'bottle'
   end
@@ -16,10 +12,10 @@ class Bottle
   end
 
   def inspect
-    @number.to_s
+    1.to_s
   end
 
   def to_s
-    @number.to_s
+    1.to_s
   end
 end

@@ -4,7 +4,7 @@ class BottleNumber
   def self.for_verse(number)
     {
       0 => NoBottles.new,
-      1 => Bottle.new(1),
+      1 => Bottle.new,
     }.fetch(number, new(number))
   end
 
