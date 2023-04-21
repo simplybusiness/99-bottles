@@ -2,14 +2,8 @@ require 'minitest/autorun'
 
 class BottlesOfBeerSongTest < Minitest::Test
   def verse(number)
-    case number
-    when 0
-      "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
-        "#{next_action(number)}, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
-    else
-      "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
-        "#{next_action(number)}, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
-    end
+    "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
+      "#{next_action(number)}, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
   end
 
   def pluralize_bottle(number)
