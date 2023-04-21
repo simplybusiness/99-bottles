@@ -8,7 +8,7 @@ class BottlesOfBeerSongTest < Minitest::Test
         "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
     when 1
       "#{number} #{pluralize_bottle(number)} of beer on the wall, #{number} #{pluralize_bottle(number)} of beer.\n" +
-        "Take it down and pass it around, no more bottles of beer on the wall.\n"
+        "Take it down and pass it around, no more #{pluralize_bottle(number-1)} of beer on the wall.\n"
     else
       "#{number} #{pluralize_bottle(number)} of beer on the wall, #{number} #{pluralize_bottle(number)} of beer.\n" +
         "Take one down and pass it around, #{number - 1} #{pluralize_bottle(number-1)} of beer on the wall.\n"
@@ -16,7 +16,7 @@ class BottlesOfBeerSongTest < Minitest::Test
   end
 
   def pluralize_bottle(number)
-    number > 1 ? "bottles" : "bottle"
+    number == 1 ? "bottle" : "bottles"
   end
 
   def test_verse_1
