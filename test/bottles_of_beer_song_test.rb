@@ -13,8 +13,8 @@ class BottlesOfBeerSongTest < Minitest::Test
       "#{number} bottles of beer on the wall, #{number} bottles of beer.\n" +
         "Take one down and pass it around, #{number - 1} bottle of beer on the wall.\n"
     else
-      "#{number} bottles of beer on the wall, #{number} bottles of beer.\n" +
-        "Take one down and pass it around, #{number - 1} bottles of beer on the wall.\n"
+      "#{number} #{pluralize_bottle(number)} of beer on the wall, #{number} #{pluralize_bottle(number)} of beer.\n" +
+        "Take one down and pass it around, #{number - 1} #{pluralize_bottle(number-1)} of beer on the wall.\n"
     end
   end
 
