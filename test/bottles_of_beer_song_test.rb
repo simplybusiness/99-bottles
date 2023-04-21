@@ -5,13 +5,13 @@ class BottlesOfBeerSongTest < Minitest::Test
     case number
     when 0
       "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
-        "Go to the store and buy some more, #{next_bottle_count(number)} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
+        "Go to the store and buy some more, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
     when 1
-      "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{number} #{pluralize_bottle(number)} of beer.\n" +
-        "Take it down and pass it around, no more #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
+      "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
+        "Take it down and pass it around, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
     else
-      "#{number} #{pluralize_bottle(number)} of beer on the wall, #{number} #{pluralize_bottle(number)} of beer.\n" +
-        "Take one down and pass it around, #{next_bottle_count(number)} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
+      "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
+        "Take one down and pass it around, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
     end
   end
 
