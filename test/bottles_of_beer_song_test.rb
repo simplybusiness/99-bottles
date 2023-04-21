@@ -8,10 +8,10 @@ class BottlesOfBeerSongTest < Minitest::Test
         "Go to the store and buy some more, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
     when 1
       "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
-        "Take it down and pass it around, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
+        "Take #{it_or_one(number)} down and pass it around, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
     else
       "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
-        "Take one down and pass it around, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
+        "Take #{it_or_one(number)} down and pass it around, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
     end
   end
 
@@ -25,6 +25,10 @@ class BottlesOfBeerSongTest < Minitest::Test
 
   def bottle_qty(number)
     number == 0 ? "no more" : number.to_s
+  end
+
+  def it_or_one(number)
+    number == 1 ? "it" : "one"
   end
 
   def test_verse_1
