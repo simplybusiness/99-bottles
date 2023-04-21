@@ -5,10 +5,10 @@ class BottlesOfBeerSongTest < Minitest::Test
     case number
     when 0
       "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
-        "Go to the store and buy some more, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
+        "#{next_action(number)}, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
     else
       "#{bottle_qty(number).capitalize} #{pluralize_bottle(number)} of beer on the wall, #{bottle_qty(number)} #{pluralize_bottle(number)} of beer.\n" +
-        "Take #{it_or_one(number)} down and pass it around, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
+        "#{next_action(number)}, #{bottle_qty(next_bottle_count(number))} #{pluralize_bottle(next_bottle_count(number))} of beer on the wall.\n"
     end
   end
 
@@ -26,6 +26,10 @@ class BottlesOfBeerSongTest < Minitest::Test
 
   def it_or_one(number)
     number == 1 ? "it" : "one"
+  end
+
+  def next_action(number)
+    number == 0 ? "Go to the store and buy some more" : "Take #{it_or_one(number)} down and pass it around" 
   end
 
   def test_verse_1
