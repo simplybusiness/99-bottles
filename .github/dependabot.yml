@@ -21,13 +21,6 @@ updates:
       separator: "-"
     cooldown:
       default-days: 5
-    groups:
-      aws-sdk:
-        patterns:
-          - "aws-sdk-*"
-      opentelemetry:
-        patterns:
-          - "opentelemetry-*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
