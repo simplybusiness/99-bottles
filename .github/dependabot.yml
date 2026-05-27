@@ -5,11 +5,6 @@ registries:
     url: https://bnw-registry.simplybusiness.io
     username: ${{secrets.BNW_REGISTRY_USERNAME}}
     password: ${{secrets.BNW_REGISTRY_PASSWORD}}
-  github-octocat:
-    type: git
-    url: https://github.com
-    username: x-access-token
-    password: ${{secrets.X_BOT_ORG_REPO_ONLY_TOKEN}}
 updates:
   - package-ecosystem: bundler
     directory: /
