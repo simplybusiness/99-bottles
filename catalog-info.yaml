@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: 99-bottles
+  title: 99 Bottles of OOP
+  description: Practise the green bar patterns of TDD and the refactor, leaning OO as you go
+  annotations:
+    github.com/project-slug: simplybusiness/99-bottles
+    backstage.io/source-template: template:default/add-to-backstage
+spec:
+  type: tooling
+  lifecycle: experimental
